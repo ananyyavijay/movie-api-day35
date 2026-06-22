@@ -5,10 +5,9 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class MovieCreate(BaseModel):
-    id: int
     title: str = Field(..., min_length=2)
     year: Optional[int] = None
-    genre: List[str] = Field(..., min_length=3)
+    genre: List[str] = Field(..., min_length=1)
     rating: Optional[float] = None
 
 class MovieResponse(BaseModel):
